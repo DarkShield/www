@@ -6,7 +6,7 @@ function isEmail($email) {
 }
 
 function isValidName($name){
-      return(preg_match("/[a-zA-Z ]+/i", $name));
+      return(preg_match("/[a-zA-Z' ]+/i", $name));
 }
 
 if($_POST) {
