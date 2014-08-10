@@ -22,7 +22,7 @@ if($_POST) {
 
     $array = array('nameMessage' => '', 'emailMessage' => '', 'messageMessage' => '',);
 
-    if($clientName == '') {
+    if($clientName === '') {
         $array['nameMessage'] = 'Empty name!';
     }
     if(!isValidName($clientName)){
@@ -31,10 +31,10 @@ if($_POST) {
     if(!isEmail($clientEmail)) {
         $array['emailMessage'] = 'Invalid email!';
     }
-    if($message == '') {
+    if($message === '') {
         $array['messageMessage'] = 'Empty message!';
     }
-    if($clientName != '' && isValidName($clientName) && isEmail($clientEmail) && $message != '') {
+    if($clientName !== '' && isValidName($clientName) && isEmail($clientEmail) && $message !== '') {
         // Send email
 	$headers = "From: " . $clientName . " <" . $clientEmail . ">" . "\r\n" . "Reply-To: " . $clientEmail;
 	mail($emailTo, $subject, $message, $headers);
